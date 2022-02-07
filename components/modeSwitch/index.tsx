@@ -14,7 +14,7 @@ const ModeSwitch = () => {
     const currentTheme = theme === 'dark' ? 'light': 'dark';
     setTheme(currentTheme);
     document.body.setAttribute('arco-theme', currentTheme);
-  }, [theme])
+  }, [theme, setTheme])
 
   if (!mounted) return null;
   return (

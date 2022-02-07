@@ -20,7 +20,7 @@ const Footer = () => {
   const { site: { author }} = themeConfig;
   const allLinks = SOCIAL_LINKS.map(sLink => {
     const { comp: Comp, link } = sLink;
-    return <a href={link} target='blank'>
+    return <a key={link} href={link} target='blank'>
       <Comp />
     </a>;
   });

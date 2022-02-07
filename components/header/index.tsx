@@ -4,6 +4,7 @@ import themeConfig from '../../theme.config';
 import { INavLink } from '../../interface';
 import ModeSwitch from '../modeSwitch';
 import LocaleSwitch from '../localeSwitch';
+import Image from 'next/image';
 
 const dumpLink = ({ title, path }: INavLink) => {
   return <Link href={path}>
@@ -20,8 +21,8 @@ const Header = () => {
   const links = NAV_LINKS.map(dumpLink);
 
   return (<header className="py-4 flex justify-between">
-    <Link href="#">
-      <img src={logo} width={36} height={36} />
+    <Link href="#" passHref>
+      <Image src={logo} width={36} height={36} alt='logo'/>
     </Link>
     <nav className='flex align-center items-center space-x-5'>
       { links }

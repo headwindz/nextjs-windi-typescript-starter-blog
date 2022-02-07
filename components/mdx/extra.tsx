@@ -7,6 +7,10 @@ interface IProps {
   duration?: IMdx['duration'];
 }
 
+const a = "d"
+const b="d"
+const c="e"
+
 const MdxExtra = ({ date, duration }: IProps) => {
   const hasDuration = duration != null;
   const isoDateString = parseISO(date); 

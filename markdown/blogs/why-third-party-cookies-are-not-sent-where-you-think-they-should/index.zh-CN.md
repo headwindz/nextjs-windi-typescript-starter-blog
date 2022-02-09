@@ -1,7 +1,6 @@
 ---
 title: '为什么 third-party'
 date: '2020-03-16'
-duration: '20min'
 tags: ['cookie', 'cors']
 ---
 

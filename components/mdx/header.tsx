@@ -10,36 +10,35 @@ interface IProps {
 }
 
 const dumpTag = (tag: string) => {
-  return <Link key={tag} href={`/tags/${tag}`} passHref>
-    <Tag size="large" color='cyan' className="cursor-pointer">{tag}</Tag>
-  </Link>
-}
+  return (
+    <Link key={tag} href={`/tags/${tag}`} passHref>
+      <Tag size="large" color="cyan" className="cursor-pointer">
+        {tag}
+      </Tag>
+    </Link>
+  );
+};
 
 const MdxHeader = ({ mdx, link }: IProps) => {
   const { title, date, tags, duration } = mdx;
-  const showDateOrDuration = date || duration;
+  const showDateOrDuration = date != null || duration != null;
   const hasTags = tags && tags.length > 0;
 
-  const _title = link ? <Link href={link}>
-    { title }
-  </Link> : title;
+  const _title = link ? <Link href={link}>{title}</Link> : title;
 
-  const _tags = hasTags ? 
-    <div className="space-x-2 mt-2">
-      { tags.map(dumpTag)}
-    </div> : null;
+  const _tags = hasTags ? (
+    <div className="space-x-2 mt-2">{tags.map(dumpTag)}</div>
+  ) : null;
 
-  const header = <section>
-    <div className="text-lg font-bold mb-1 text-left">
-      {_title}
-    </div>
-    {
-      showDateOrDuration && <MdxExtra {...mdx} />
-    }
-    { _tags }
-  </section>;
-  
+  const header = (
+    <section>
+      <div className="text-lg font-bold mb-1 text-left">{_title}</div>
+      {showDateOrDuration && <MdxExtra {...mdx} />}
+      {_tags}
+    </section>
+  );
+
   return header;
-}
+};
 
-export default MdxHeader
+export default MdxHeader;

@@ -4,14 +4,16 @@ import { getAllBlogs, getBlogById } from '../../lib/api';
 import Head from 'next/head';
 import markdownToHtml from '../../lib/mdToHtml';
 import { GetStaticProps, GetStaticPaths } from 'next';
+import { BLOG_HEADER_KEYS } from '../../constants';
 
+// blog detail page
 const Blog = ({ blog }: any) => {
   return (
     <Layout>
       <Head>
         <title> {blog.title} </title>
       </Head>
-      <Mdx mdx={blog}></Mdx>
+      <Mdx mdx={blog} />
     </Layout>
   );
 };
@@ -26,9 +28,10 @@ export const getStaticProps: GetStaticProps<any, IParams> = async (context) => {
   const { params, locale } = context;
   const blog = getBlogById(
     params!.id,
-    ['title', 'date', 'content', 'tags'],
+    [...BLOG_HEADER_KEYS, 'content'],
     locale
   );
+
   const content = await markdownToHtml(blog.content || '');
 
   return {

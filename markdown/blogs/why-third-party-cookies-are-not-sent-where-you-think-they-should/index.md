@@ -1,7 +1,6 @@
 ---
 title: 'Why third-party cookies are NOT sent where you think they should'
 date: '2020-09-26'
-duration: '20min'
 tags: ['cookie', 'cors']
 ---
 
@@ -13,7 +12,7 @@ You can view the first-party cookies on chrome by following the procedure: Open 
 
 ## Context where we need third-party cookies
 
-A cross-origin request where CORS is used. 
+A cross-origin request where CORS is used.
 
 ### `OPTIONS` request
 
@@ -46,7 +45,7 @@ It takes three possible values: Strict, Lax, and None. With `Strict`, the cookie
 ## Requirements for third party cookies to be sent
 
 1. Browser settings should support third party cookies to be set. For Chrome, check the setting through the path: settings -> privacy and security -> Cookies and other site data -> Allow all cookies
-2. Server correctly sets the `Same-Site` attirbute in the `Set-Cookie` response header, 
+2. Server correctly sets the `Same-Site` attirbute in the `Set-Cookie` response header,
 3. Set `Access-Control-Allow-Credentails: true` in the `OPTIONS` prefilight request.
 4. Client should explicitly includes the credentials in the request.
 
@@ -54,7 +53,7 @@ It takes three possible values: Strict, Lax, and None. With `Strict`, the cookie
 
 ```js
 fetch('https://example.com', {
-  credentials: 'include' | 'same-origin' | 'omit'
+  credentials: 'include' | 'same-origin' | 'omit',
 });
 ```
 
@@ -66,4 +65,4 @@ axios.defaults.withCredentials = true;
 
 ## Notice
 
-* If you want to follow the latest news/articles for the series of my blogs, Please [「Watch」](https://github.com/n0ruSh/blogs/)to Subscribe
+- If you want to follow the latest news/articles for the series of my blogs, Please [「Watch」](https://github.com/n0ruSh/blogs/)to Subscribe

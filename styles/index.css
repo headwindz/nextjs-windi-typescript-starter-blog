@@ -1,11 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 a {
   @apply opacity-60 hover:opacity-100 no-underline;
 }
 
 .tw-section-title {
-  @apply mb-8 select-none text-5xl font-bold
+  @apply mb-8 select-none text-5xl font-bold;
 }

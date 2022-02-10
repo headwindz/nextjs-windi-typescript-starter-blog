@@ -32,7 +32,9 @@ const MdxHeader = ({ mdx, link }: IProps) => {
 
   const header = (
     <section>
-      <div className="text-lg font-bold mb-1 text-left">{_title}</div>
+      <div className="mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
+        {_title}
+      </div>
       {showDateOrDuration && <MdxExtra {...mdx} />}
       {_tags}
     </section>

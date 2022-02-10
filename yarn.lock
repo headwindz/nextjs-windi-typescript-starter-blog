@@ -1480,6 +1480,31 @@
   resolved "https://registry.npmmirror.com/@tsconfig/node16/-/node16-1.0.2.tgz#423c77877d0569db20e1fc80885ac4118314010e"
   integrity sha512-eZxlbI8GZscaGS7kkc/trHTT5xgrjH3/1n2JDwusC9iahPKWMRvRjJSAN5mCXviuTGQ/lHnhvv8Q1YTpnfz9gA==
 
+"@twin.arco/colors@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npmmirror.com/@twin.arco/colors/-/colors-0.1.1.tgz#ba7e6e317dd68de576aad8e7e1df0586af15b466"
+  integrity sha512-Ajs8Up8yGXFk+gi+DB+Q9QvI3p8+H88/+MjF5DDcrU3eR1KT2B867i72WWV58xpv8fEYwuGVVz2rZ8akMBMYdg==
+  dependencies:
+    "@babel/runtime" "^7.16.3"
+
+"@twin.arco/dark-mode@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npmmirror.com/@twin.arco/dark-mode/-/dark-mode-0.1.1.tgz#41889eb53ca07db9557f19e720ca48cbb6f3e2e4"
+  integrity sha512-RxvgIOsuy8/Q+aFmdIkaIqK8WYocQGB0v8R/48a6Xlzb0lKpGt2qxy3qdfpeYZ/CrmnE9IAOeIzhGvW1Oae20Q==
+  dependencies:
+    "@babel/runtime" "^7.16.3"
+    consola "^2.15.3"
+    windicss "^3.2.1"
+
+"@twin.arco/preset@0.3.2":
+  version "0.3.2"
+  resolved "https://registry.npmmirror.com/@twin.arco/preset/-/preset-0.3.2.tgz#c26b505d30f0a800b71a90f1640888ac76f47f23"
+  integrity sha512-hFQKNbpaAMhWhJv1d07rv7bfcMnyCUlMxZjliX2ZY5Yb49iJhpkXMDJhyA8oDPKZ1tc4ZqNKv+XbQgq/5zxfuA==
+  dependencies:
+    "@babel/runtime" "^7.16.3"
+    "@twin.arco/colors" "0.1.1"
+    "@twin.arco/dark-mode" "0.1.1"
+
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0":
   version "2.0.4"
   resolved "https://registry.npmmirror.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.4.tgz#8467d4b3c087805d63580480890791277ce35c44"
@@ -2128,6 +2153,11 @@ concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.npmmirror.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
   integrity sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==
+
+consola@^2.15.3:
+  version "2.15.3"
+  resolved "https://registry.npmmirror.com/consola/-/consola-2.15.3.tgz#2e11f98d6a4be71ff72e0bdf07bd23e12cb61550"
+  integrity sha512-9vAdYbHj6x2fLKC4+oPH0kFzY/orMZyG2Aj+kNylHxKGJ/Ed4dpNyAQYwJOdqO4zdM7XpVHmyejQDcQHrnuXbw==
 
 conventional-changelog-angular@^5.0.11:
   version "5.0.13"
@@ -4852,6 +4882,14 @@ tsutils@^3.21.0:
   dependencies:
     tslib "^1.8.1"
 
+twin.arco@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.npmmirror.com/twin.arco/-/twin.arco-1.3.2.tgz#4b12f0768cf34de716319c871e7036b58cb0ff69"
+  integrity sha512-+r+ac2EUNOFDSpk1kOYoOZ736WhSI5t0RAjJAeH7VBUUEtwXmmL52sErOcE8HCJ0Wu8EYw3cqruJ/5DiHQD+oA==
+  dependencies:
+    "@babel/runtime" "^7.16.3"
+    "@twin.arco/preset" "0.3.2"
+
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"
   resolved "https://registry.npmmirror.com/type-check/-/type-check-0.4.0.tgz#07b8203bfa7056c0657050e3ccd2c37730bab8f1"
@@ -5102,7 +5140,7 @@ windicss-webpack-plugin@^1.6.4:
     webpack-virtual-modules "^0.4.3"
     windicss "^3.4.3"
 
-windicss@^3.4.3:
+windicss@^3.2.1, windicss@^3.4.3:
   version "3.4.3"
   resolved "https://registry.npmmirror.com/windicss/-/windicss-3.4.3.tgz#347d09fee8eb6b3fc5e6e68b435c76ccb24a748c"
   integrity sha512-UnugThsvEgy8RsPm4/B5DYMCAqvZzD6yWU7Anh+f07t5RSJ8zvmAylGLbXrHPJEmCKzo2Mf+fOUvISH7IJqM3A==

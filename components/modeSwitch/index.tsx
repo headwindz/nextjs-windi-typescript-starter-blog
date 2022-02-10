@@ -1,33 +1,32 @@
-import { useCallback, useEffect, useState } from 'react'
-import { useTheme } from 'next-themes'
-import MoonIcon from './moon.svg';
-import SunIcon from './sun.svg';
+import { useCallback, useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
+import { Button } from '@arco-design/web-react';
+import { IconSun, IconMoon } from '@arco-design/web-react/icon';
 
 const ModeSwitch = () => {
   // https://github.com/pacocoursey/next-themes
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme } = useTheme();
 
-  useEffect(() => setMounted(true), [])
+  useEffect(() => setMounted(true), []);
 
   const onToggle = useCallback(() => {
-    const currentTheme = theme === 'dark' ? 'light': 'dark';
+    const currentTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(currentTheme);
     document.body.setAttribute('arco-theme', currentTheme);
-  }, [theme, setTheme])
+  }, [theme, setTheme]);
 
   if (!mounted) return null;
   return (
-    <a
+    <Button
+      type="text"
       aria-label="Toggle Dark Mode"
-      className="rounded"
+      className="rounded !text-arco-text-1 text-base"
       onClick={onToggle}
     >
-      {
-        theme == 'light' ? <MoonIcon /> : <SunIcon />
-      }
-    </a>
-  )
-}
+      {theme == 'light' ? <IconSun /> : <IconMoon />}
+    </Button>
+  );
+};
 
 export default ModeSwitch;

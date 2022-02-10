@@ -10,7 +10,7 @@ import Image from 'next/image';
 const dumpLink = ({ title, path }: INavLink) => {
   return (
     <Link href={path}>
-      <Button type="text" size="large" className="text-base">
+      <Button type="text" className="text-base">
         {title}
       </Button>
     </Link>

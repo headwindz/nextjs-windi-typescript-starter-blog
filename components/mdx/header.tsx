@@ -12,7 +12,7 @@ interface IProps {
 const dumpTag = (tag: string) => {
   return (
     <Link key={tag} href={`/tags/${tag}`} passHref>
-      <Tag size="large" color="cyan" className="cursor-pointer">
+      <Tag color="cyan" className="cursor-pointer">
         {tag}
       </Tag>
     </Link>

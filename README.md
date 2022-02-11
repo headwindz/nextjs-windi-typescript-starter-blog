@@ -1,5 +1,11 @@
 > This project is still WIP
 
+#
+
+```
+yarn run dev
+```
+
 # Preview
 
 [preview on vercel](https://nextjs-tailwind-typescript-starter-blog-n0rush.vercel.app)

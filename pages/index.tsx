@@ -1,8 +1,8 @@
-import Layout from '../components/layout';
-import Mdx from '../components/mdx';
-import { getIntro } from '../lib/api';
-import mdToHtml from '../lib/mdToHtml';
-import { IMdx } from '../interface';
+import Layout from '@components/layout';
+import Mdx from '@components/mdx';
+import { getIntro } from '@lib/api';
+import mdToHtml from '@lib/mdToHtml';
+import { IMdx } from '@interface';
 import { GetStaticProps } from 'next';
 
 const Index = ({ intro }: { intro: IMdx }) => {

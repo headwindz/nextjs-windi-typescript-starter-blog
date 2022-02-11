@@ -1,5 +1,4 @@
-// Keep
-import Head from 'next/head'
+import Head from 'next/head';
 
 const Meta = () => {
   return (
@@ -33,7 +32,7 @@ const Meta = () => {
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
     </Head>
-  )
-}
+  );
+};
 
-export default Meta
+export default Meta;

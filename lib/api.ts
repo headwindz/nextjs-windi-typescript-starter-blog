@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
-import { IMdx } from '../interface';
+import { IMdx } from '@interface';
 import themeConfig from '../theme.config';
 import readingTime from 'reading-time';
 

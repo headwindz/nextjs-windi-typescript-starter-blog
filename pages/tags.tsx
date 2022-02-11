@@ -1,9 +1,9 @@
-import Layout from '../components/layout';
-import { getGroupedTagsInfo } from '../lib/api';
+import Layout from '@components/layout';
+import { getGroupedTagsInfo } from '@lib/api';
 import { GetStaticProps } from 'next';
 import { Tag } from '@arco-design/web-react';
 import Link from 'next/link';
-import { IGroupedTagsInfo } from '../interface';
+import { IGroupedTagsInfo } from '@interface';
 
 interface IProps {
   groupedTags: IGroupedTagsInfo<'tags'>;

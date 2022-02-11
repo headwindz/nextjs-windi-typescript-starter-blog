@@ -1,4 +1,4 @@
-import { IMdx } from '../interface'
+import { IMdx } from '@interface';
 
 export const BLOG_HEADER_KEYS: (keyof IMdx)[] = [
   'title',

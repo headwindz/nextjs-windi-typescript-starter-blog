@@ -1,4 +1,4 @@
-import { IMdx } from '../../interface';
+import { IMdx } from '@interface';
 import { Tag } from '@arco-design/web-react';
 import Link from 'next/link';
 import MdxExtra from './extra';

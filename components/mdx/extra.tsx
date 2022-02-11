@@ -1,5 +1,5 @@
 import { parseISO, format } from 'date-fns';
-import { IMdx } from '../../interface';
+import { IMdx } from '@interface';
 
 interface IProps {
   date: IMdx['date'];

@@ -1,10 +1,10 @@
-import Layout from '../../components/layout';
-import Mdx from '../../components/mdx';
-import { getAllBlogs, getBlogById } from '../../lib/api';
+import Layout from '@components/layout';
+import Mdx from '@components/mdx';
+import { getAllBlogs, getBlogById } from '@lib/api';
 import Head from 'next/head';
-import markdownToHtml from '../../lib/mdToHtml';
+import markdownToHtml from '@lib/mdToHtml';
 import { GetStaticProps, GetStaticPaths } from 'next';
-import { BLOG_HEADER_KEYS } from '../../constants';
+import { BLOG_HEADER_KEYS } from '@constants';
 
 // blog detail page
 const Blog = ({ blog }: any) => {
@@ -13,7 +13,7 @@ const Blog = ({ blog }: any) => {
       <Head>
         <title> {blog.title} </title>
       </Head>
-      <Mdx mdx={blog} />
+      <Mdx mdx={blog} showBackOption={true} />
     </Layout>
   );
 };

@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import Head from 'next/head';
-import { IMdx } from '../../interface';
+import { IMdx } from '@interface';
 import MdxHeader from './header';
 import { useRouter } from 'next/router';
 

@@ -10,11 +10,9 @@ const MdxExtra = ({ date, duration }: IProps) => {
   const hasDuration = duration != null;
   const isoDateString = parseISO(date);
   return (
-    <div className="flex space-x-1 items-center text-sm">
-      <time dateTime={date} className="text-pink-500">
-        {format(isoDateString, 'LLL d, yyyy')}
-      </time>
-      {hasDuration ? <div className="text-gray-400">- {duration}</div> : null}
+    <div className="flex space-x-1 items-center text-sm text-gray-400 dark:text-gray-200">
+      <time dateTime={date}>{format(isoDateString, 'LLL d, yyyy')}</time>
+      {hasDuration ? <div>- 🍸 {duration}</div> : null}
     </div>
   );
 };

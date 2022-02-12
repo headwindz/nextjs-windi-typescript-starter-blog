@@ -1,31 +1,34 @@
 module.exports = {
   i18n: {
-    locales: [{
-      title: 'English',
-      value: 'en-US',
-    }, {
-      title: '中文',
-      value: 'zh-CN'
-    }],
-    defaultLocale: 'en-US'
+    locales: [
+      {
+        title: 'English',
+        value: 'en-US',
+      },
+      {
+        title: '中文',
+        value: 'zh-CN',
+      },
+    ],
+    defaultLocale: 'en-US',
   },
   site: {
     author: {
       name: 'n0ruSh',
-      link: 'https://github.com/n0rush'
+      link: 'https://github.com/n0rush',
     },
-    title: "Nextjs tailwind starter blog",
-    logo: '/assets/logo.svg',
+    title: 'Nextjs tailwind starter blog',
+    logo: '/assets/logo.jpeg',
   },
   navLinks: [
     {
-      title: "Blog",
-      path: "/blogs",
+      title: 'Blog',
+      path: '/blogs',
     },
     {
-      title: "Tag",
-      path: "/tags",
+      title: 'Tag',
+      path: '/tags',
     },
   ],
-  fontClass: 'font-mono'
+  fontClass: 'font-mono',
 };

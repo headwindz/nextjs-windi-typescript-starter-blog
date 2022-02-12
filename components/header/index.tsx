@@ -1,11 +1,10 @@
 import { useMemo } from 'react';
 import Link from 'next/link';
-import { Button } from '@arco-design/web-react';
+import { Button, Avatar } from '@arco-design/web-react';
 import themeConfig from '../../theme.config';
-import { INavLink } from '../../interface';
+import { INavLink } from '@interface';
 import ModeSwitch from '../modeSwitch';
 import LocaleSwitch from '../localeSwitch';
-import Image from 'next/image';
 
 const dumpLink = ({ title, path }: INavLink) => {
   return (
@@ -31,7 +30,9 @@ const Header = () => {
   return (
     <header className="py-4 flex justify-between">
       <Link href="#" passHref>
-        <Image src={logo} width={36} height={36} alt="logo" />
+        <Avatar>
+          <img src={logo} width={36} height={36} alt="logo" />
+        </Avatar>
       </Link>
       <nav className="flex align-center items-center space-x-2">
         <div>

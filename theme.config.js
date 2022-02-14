@@ -30,5 +30,4 @@ module.exports = {
       path: '/tags',
     },
   ],
-  fontClass: 'font-mono',
 };

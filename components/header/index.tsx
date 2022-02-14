@@ -5,10 +5,11 @@ import themeConfig from '../../theme.config';
 import { INavLink } from '@interface';
 import ModeSwitch from '../modeSwitch';
 import LocaleSwitch from '../localeSwitch';
+import Image from 'next/image';
 
 const dumpLink = ({ title, path }: INavLink) => {
   return (
-    <Link href={path} passHref>
+    <Link href={path} passHref key={path}>
       <Button type="text" className="text-base">
         {title}
       </Button>
@@ -30,9 +31,13 @@ const Header = () => {
   return (
     <header className="py-4 flex justify-between">
       <Link href="#" passHref>
-        <Avatar>
-          <img src={logo} width={36} height={36} alt="logo" />
-        </Avatar>
+        <Image
+          src={logo}
+          width={40}
+          height={40}
+          alt="logo"
+          className="rounded-full"
+        />
       </Link>
       <nav className="flex align-center items-center space-x-2">
         <div>

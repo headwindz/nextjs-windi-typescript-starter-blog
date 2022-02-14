@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import Link from 'next/link';
-import { Button, Avatar } from '@arco-design/web-react';
+import { Button } from '@arco-design/web-react';
 import themeConfig from '../../theme.config';
 import { INavLink } from '@interface';
 import ModeSwitch from '../modeSwitch';
@@ -30,14 +30,16 @@ const Header = () => {
 
   return (
     <header className="py-4 flex justify-between">
-      <Link href="#" passHref>
-        <Image
-          src={logo}
-          width={40}
-          height={40}
-          alt="logo"
-          className="rounded-full"
-        />
+      <Link href="/" passHref>
+        <a>
+          <Image
+            src={logo}
+            width={40}
+            height={40}
+            alt="logo"
+            className="rounded-full"
+          />
+        </a>
       </Link>
       <nav className="flex align-center items-center space-x-2">
         <div>

@@ -1,5 +1,5 @@
 a {
-  @apply opacity-60 hover:opacity-100 !no-underline !cursor-pointer;
+  @apply !no-underline !cursor-pointer;
 }
 
 .tw-section-title {

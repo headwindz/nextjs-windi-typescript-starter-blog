@@ -38,7 +38,7 @@ const Footer = () => {
     );
   });
   return (
-    <footer className="w-full flex flex-col items-center mt-4 p-3 border-gray-4 border-solid border-t-1 mx-auto">
+    <footer className="prose w-full flex flex-col items-center mt-4 p-3 border-gray-4 border-solid border-t-1 mx-auto">
       <div className="flex space-x-6 mb-4">{allLinks}</div>
       <div className="text-xs text-gray-6 font-mono">{`Copyright © ${new Date().getFullYear()} ${
         author.name

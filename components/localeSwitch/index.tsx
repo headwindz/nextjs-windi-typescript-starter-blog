@@ -2,9 +2,9 @@ import { Select } from '@arco-design/web-react';
 import { useRouter } from 'next/router';
 import themeConfig from '../../theme.config';
 
-const LocaleSwitch = () => {
+const LocaleSwitch = ({ className }: { className?: string }) => {
   const router = useRouter();
-  const { locale, pathname, asPath } = router;
+  const { locale, asPath } = router;
   const locales = themeConfig.i18n.locales;
   const options = locales.map((lcs) => {
     return {
@@ -21,7 +21,7 @@ const LocaleSwitch = () => {
 
   return (
     <Select
-      className="!w-24"
+      className={`!w-24 ${className}`}
       options={options}
       value={locale}
       onChange={onLocaleChange}

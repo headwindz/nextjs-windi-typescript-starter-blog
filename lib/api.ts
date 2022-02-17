@@ -116,3 +116,38 @@ export function getMdxByPath(fileFullPath: string, fields: MdxKeys = []): IMdx {
 
   return info;
 }
+
+export async function getSource(rawContent: string) {
+  // https://github.com/kentcdodds/mdx-bundler#nextjs-esbuild-enoent
+  // if (process.platform === 'win32') {
+  //   process.env.ESBUILD_BINARY_PATH = path.join(root, 'node_modules', 'esbuild', 'esbuild.exe')
+  // } else {
+  //   process.env.ESBUILD_BINARY_PATH = path.join(root, 'node_modules', 'esbuild', 'bin', 'esbuild')
+  // }
+
+  const { code } = await bundleMDX({
+    source: rawContent,
+    xdmOptions(options, frontmatter) {
+      // this is the recommended way to add custom remark/rehype plugins:
+      // The syntax might look weird, but it protects you in case we add/remove
+      // plugins in the future.
+      options.remarkPlugins = [...(options.remarkPlugins ?? []), remarkGfm];
+      options.rehypePlugins = [
+        ...(options.rehypePlugins ?? []),
+        [rehypePrismPlus, { ignoreMissing: true }],
+      ];
+      return options;
+    },
+    esbuildOptions: (options) => {
+      options.loader = {
+        ...options.loader,
+        '.js': 'jsx',
+      };
+      return options;
+    },
+  });
+
+  return {
+    mdxSource: code,
+  };
+}

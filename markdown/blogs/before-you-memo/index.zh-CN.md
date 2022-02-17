@@ -51,7 +51,7 @@ _([在这里试试](https://codesandbox.io/s/frosty-glade-m33km?file=/src/App.js
 
 如果你仔细看一下渲染代码，你会注意到返回的树中只有一部分真正关心当前的`color`：
 
-```jsx{2,5-6}
+```jsx
 export default function App() {
   let [color, setColor] = useState('red');
   return (
@@ -66,7 +66,7 @@ export default function App() {
 
 所以让我们把这一部分提取到`Form`组件中然后将 state 移动到该组件里：
 
-```jsx{4,11,14,15}
+```jsx
 export default function App() {
   return (
     <>
@@ -95,7 +95,7 @@ _([在这里试试](https://codesandbox.io/s/billowing-wood-1tq2u?file=/src/App.
 
 当一部分 state 在高开销树的上层代码中使用时上述解法就无法奏效了。举个例子，如果我们将`color`放到父元素`div`中。
 
-```jsx{2,4}
+```jsx
 export default function App() {
   let [color, setColor] = useState('red');
   return (
@@ -122,7 +122,7 @@ _([在这里试试](https://codesandbox.io/s/bold-dust-0jbg7?file=/src/App.js:58
 
 答案显而易见：
 
-```jsx{4,5,10,15}
+```jsx
 export default function App() {
   return (
     <ColorPicker>
@@ -133,7 +133,7 @@ export default function App() {
 }
 
 function ColorPicker({ children }) {
-  let [color, setColor] = useState("red");
+  let [color, setColor] = useState('red');
   return (
     <div style={{ color }}>
       <input value={color} onChange={(e) => setColor(e.target.value)} />

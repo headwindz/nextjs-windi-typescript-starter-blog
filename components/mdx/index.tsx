@@ -1,9 +1,9 @@
 import { useCallback } from 'react';
 import Head from 'next/head';
 import { IMdx } from '@interface';
-import MdxHeader from './header';
+import Renderer from './renderer';
+import Header from './header';
 import { useRouter } from 'next/router';
-
 interface IProps {
   mdx: IMdx;
   showBackOption: boolean;
@@ -26,10 +26,8 @@ const Mdx = ({ mdx, showBackOption = true }: IProps) => {
       <Head>
         <title>{title}</title>
       </Head>
-      <MdxHeader mdx={mdx} />
-      <div className="max-w-2xl mx-auto">
-        <div dangerouslySetInnerHTML={{ __html: content }} />
-      </div>
+      <Header mdx={mdx} />
+      <Renderer mdxSource={content} />
       {showBackOption ? (
         <a className="!no-underline italic !font-bold text-3xl" onClick={back}>
           cd ..

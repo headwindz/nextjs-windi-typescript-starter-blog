@@ -19,7 +19,7 @@ const dumpTag = (tag: string) => {
   );
 };
 
-const MdxHeader = ({ mdx, link }: IProps) => {
+const Header = ({ mdx, link }: IProps) => {
   const { title, date, tags, duration } = mdx;
   const showDateOrDuration = date != null || duration != null;
   const hasTags = tags && tags.length > 0;
@@ -43,4 +43,4 @@ const MdxHeader = ({ mdx, link }: IProps) => {
   return header;
 };
 
-export default MdxHeader;
+export default Header;

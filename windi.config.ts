@@ -1,5 +1,6 @@
 import { defineConfig } from 'windicss/helpers';
 import { preset } from 'twin.arco';
+import typography from 'windicss/plugin/typography';
 
 export default defineConfig({
   darkMode: 'class',
@@ -8,5 +9,9 @@ export default defineConfig({
     exclude: ['node_modules', '.git', '.next/**/*'],
   },
   presets: [preset()],
-  plugins: [require('windicss/plugin/typography')],
+  plugins: [
+    typography({
+      dark: true,
+    }),
+  ],
 });

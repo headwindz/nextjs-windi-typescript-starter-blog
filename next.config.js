@@ -1,9 +1,24 @@
 const themeConfig = require('./theme.config');
 const { prop } = require('ramda');
 const WindiCSSWebpackPlugin = require('windicss-webpack-plugin');
+const { withContentlayer } = require('next-contentlayer');
 
-const i18n = themeConfig.i18n;
-module.exports = {
+const i18n = {
+  locales: [
+    {
+      title: 'English',
+      value: 'en-US',
+    },
+    {
+      title: '中文',
+      value: 'zh-CN',
+    },
+  ],
+  defaultLocale: 'en-US',
+};
+
+module.exports = withContentlayer()({
+  reactStrictMode: true,
   i18n: {
     ...i18n,
     locales: i18n.locales.map(prop('value')),
@@ -17,4 +32,4 @@ module.exports = {
     config.plugins.push(new WindiCSSWebpackPlugin());
     return config;
   },
-};
+});

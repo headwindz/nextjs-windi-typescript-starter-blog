@@ -12,9 +12,6 @@ const MD_ROOT_DIR = join(process.cwd(), 'markdown');
 /** blogs directory */
 const BLOG_ROOT_DIRECTORY = join(MD_ROOT_DIR, 'blogs');
 
-/** notes directory */
-// const NOTES_ROOT_DIRECTORY = join(MD_ROOT_DIR, 'notes')
-
 /**
  *
  * @param the path of the directory that contains the markdowns

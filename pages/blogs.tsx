@@ -1,9 +1,9 @@
 import Layout from '@components/layout';
 import MdxHeader from '@components/mdx/header';
 import { IMdx } from '@interface';
-import { getAllBlogs } from '@lib/api';
 import { GetStaticProps } from 'next';
 import { BLOG_HEADER_KEYS } from '@constants';
+import { allBlogs } from '.contentlayer/generated';
 
 // https://dev.to/shakyshane/2-ways-to-create-a-union-from-an-array-in-typescript-1kd6#:~:text=First%20way%20to%20create%20a%20union%20from%20an%20array&text=By%20restricting%20the%20type%20with,derive%20a%20union%20from%20this.&text=It%20turns%20out%20that%20using,of%20all%20possible%20types%20within.
 interface IProps {
@@ -28,9 +28,9 @@ export default Blogs;
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const locale = context.locale;
-  const blogs = getAllBlogs(BLOG_HEADER_KEYS, locale);
-
+  console.log('locale is', locale);
+  // const blogs = getAllBlogs(BLOG_HEADER_KEYS, locale);
   return {
-    props: { blogs },
+    props: { blogs: [] },
   };
 };

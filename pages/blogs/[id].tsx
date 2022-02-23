@@ -1,10 +1,8 @@
 import Layout from '@components/layout';
 import Mdx from '@components/mdx';
-import { getAllBlogs, getBlogById } from '@lib/api';
 import Head from 'next/head';
-import markdownToHtml from '@lib/mdToHtml';
 import { GetStaticProps, GetStaticPaths } from 'next';
-import { BLOG_HEADER_KEYS } from '@constants';
+import { allBlogs } from '.contentlayer/generated';
 
 // blog detail page
 const Blog = ({ blog }: any) => {
@@ -26,39 +24,32 @@ type IParams = {
 
 export const getStaticProps: GetStaticProps<any, IParams> = async (context) => {
   const { params, locale } = context;
-  const blog = getBlogById(
-    params!.id,
-    [...BLOG_HEADER_KEYS, 'content'],
-    locale
-  );
 
-  const content = await markdownToHtml(blog.content || '');
+  const blog = allBlogs.find(
+    (it) => it.id === params.id && it.locale === locale
+  );
 
   return {
     props: {
       blog: {
         ...blog,
-        content,
+        content: blog.body.code,
       },
     },
   };
 };
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const blogs = getAllBlogs(['id']);
-  const paths: { params: { id: string }; locale: string }[] = [];
-  (locales || []).forEach((locale: string) => {
-    blogs.forEach((blog) => {
-      paths.push({
-        params: {
-          id: blog.id,
-        },
-        locale,
-      });
-    });
+  const allPaths = allBlogs.map((it) => {
+    return {
+      params: {
+        id: it.id,
+      },
+      locale: it.locale,
+    };
   });
   return {
-    paths: paths,
+    paths: allPaths,
     fallback: false,
   };
 };

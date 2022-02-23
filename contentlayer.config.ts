@@ -3,6 +3,8 @@ import {
   defineDocumentType,
   makeSource,
 } from 'contentlayer/source-files';
+import type { FieldDefs } from 'contentlayer';
+// TODO: use default locale from theme config
 // import themeConfig from './theme.config.js'
 
 import readingTime from 'reading-time';
@@ -21,6 +23,10 @@ const computedFields: ComputedFields = {
     type: 'string',
     resolve: (doc) => doc._raw.sourceFileDir.replace(/.*\//g, ''),
   },
+  id: {
+    type: 'string',
+    resolve: (doc) => doc._raw.sourceFileDir.replace(/.*\//g, ''),
+  },
   locale: {
     type: 'string',
     resolve: (doc) => {
@@ -32,12 +38,25 @@ const computedFields: ComputedFields = {
   },
 };
 
+const REQUIRED_FIELD: any = {
+  title: { type: 'string', required: true },
+};
+
+const COMMON_FIELDS: any = {
+  tags: { type: 'list' },
+  date: { type: 'date' },
+};
+
 const Blogs = defineDocumentType(() => ({
   name: 'Blogs',
   filePathPattern: 'blogs/**/*.mdx',
-  bodyType: 'mdx',
+  contentType: 'mdx',
   fields: {
+    // ...REQUIRED_FIELD,
+    // ...COMMON_FIELDS
     title: { type: 'string', required: true },
+    date: { type: 'date' },
+    tags: { type: 'json' },
   },
   computedFields,
 }));
@@ -45,7 +64,7 @@ const Blogs = defineDocumentType(() => ({
 const Intro = defineDocumentType(() => ({
   name: 'Intro',
   filePathPattern: 'intro/*.mdx',
-  bodyType: 'mdx',
+  contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
   },

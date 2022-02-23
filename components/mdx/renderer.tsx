@@ -1,8 +1,7 @@
-import { useMemo } from 'react';
-import { getMDXComponent } from 'mdx-bundler/client';
+import { useMDXComponent } from 'next-contentlayer/hooks';
 
 const Renderer = ({ mdxSource }: any) => {
-  const Component = useMemo(() => getMDXComponent(mdxSource), [mdxSource]);
+  const Component = useMDXComponent(mdxSource);
 
   return <Component />;
 };

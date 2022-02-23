@@ -1,4 +1,4 @@
-const themeConfig = require('./theme.config');
+// const themeConfig = require('./theme.config');
 const { prop } = require('ramda');
 const WindiCSSWebpackPlugin = require('windicss-webpack-plugin');
 const { withContentlayer } = require('next-contentlayer');

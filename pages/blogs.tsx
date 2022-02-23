@@ -28,9 +28,9 @@ export default Blogs;
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const locale = context.locale;
-  console.log('locale is', locale);
-  // const blogs = getAllBlogs(BLOG_HEADER_KEYS, locale);
+
+  const blogs = allBlogs.filter((it) => it.locale === locale);
   return {
-    props: { blogs: [] },
+    props: { blogs },
   };
 };

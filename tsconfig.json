@@ -9,7 +9,7 @@
     "forceConsistentCasingInFileNames": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "noEmit": true,
+    "noEmit": false,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,

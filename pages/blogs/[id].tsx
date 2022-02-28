@@ -26,14 +26,14 @@ export const getStaticProps: GetStaticProps<any, IParams> = async (context) => {
   const { params, locale } = context;
 
   const blog = allBlogs.find(
-    (it) => it.id === params.id && it.locale === locale
+    (it) => it.id === params!.id && it.locale === locale
   );
 
   return {
     props: {
       blog: {
         ...blog,
-        content: blog.body.code,
+        content: blog!.body.code,
       },
     },
   };

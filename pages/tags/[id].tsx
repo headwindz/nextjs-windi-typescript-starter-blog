@@ -14,7 +14,8 @@ interface IProps {
 const Tag = ({ tagString, blogs }: IProps) => {
   return (
     <Layout>
-      <Head>
+      tag
+      {/* <Head>
         <title>{tagString}</title>
       </Head>
       <h1 className="tw-section-title">{tagString}</h1>
@@ -23,7 +24,7 @@ const Tag = ({ tagString, blogs }: IProps) => {
           const { id } = blog;
           return <MdxHeader key={id} mdx={blog} link={`/blogs/${id}`} />;
         })}
-      </div>
+      </div> */}
     </Layout>
   );
 };
@@ -37,37 +38,37 @@ type IParams = {
   id: string;
 };
 
-export const getStaticProps: GetStaticProps<any, IParams> = async ({
-  params,
-  locale,
-}) => {
-  const { id } = params!;
-  const groupedTagsInfo = getGroupedTagsInfo(BLOG_HEADER_KEYS, locale);
-  const blogs = groupedTagsInfo[id];
+// export const getStaticProps: GetStaticProps<any, IParams> = async ({
+//   params,
+//   locale,
+// }) => {
+//   const { id } = params!;
+//   const groupedTagsInfo = getGroupedTagsInfo(BLOG_HEADER_KEYS, locale);
+//   const blogs = groupedTagsInfo[id];
 
-  return {
-    props: {
-      tagString: id,
-      blogs,
-    },
-  };
-};
+//   return {
+//     props: {
+//       tagString: id,
+//       blogs,
+//     },
+//   };
+// };
 
-export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const tagsInfo = getGroupedTagsInfo([]);
-  const paths: { params: IParams; locale: string }[] = [];
-  (locales || []).forEach((locale: string) => {
-    Object.keys(tagsInfo).forEach((tagString: string) => {
-      paths.push({
-        params: {
-          id: tagString,
-        },
-        locale,
-      });
-    });
-  });
-  return {
-    paths: paths,
-    fallback: false,
-  };
-};
+// export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+//   const tagsInfo = getGroupedTagsInfo([]);
+//   const paths: { params: IParams; locale: string }[] = [];
+//   (locales || []).forEach((locale: string) => {
+//     Object.keys(tagsInfo).forEach((tagString: string) => {
+//       paths.push({
+//         params: {
+//           id: tagString,
+//         },
+//         locale,
+//       });
+//     });
+//   });
+//   return {
+//     paths: paths,
+//     fallback: false,
+//   };
+// };

@@ -3,7 +3,6 @@ import {
   defineDocumentType,
   makeSource,
 } from 'contentlayer/source-files';
-import type { FieldDefs } from 'contentlayer';
 // TODO: use default locale from theme config
 // import themeConfig from './theme.config.js'
 

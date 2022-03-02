@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps<any, IParams> = async (context) => {
   const { params, locale } = context;
 
   const blog = allBlogs.find(
-    (it) => it.id === params!.id && it.locale === locale
+    (it) => it.slug === params!.slug && it.locale === locale
   );
 
   return {
@@ -39,11 +39,11 @@ export const getStaticProps: GetStaticProps<any, IParams> = async (context) => {
   };
 };
 
-export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+export const getStaticPaths: GetStaticPaths = async () => {
   const allPaths = allBlogs.map((it) => {
     return {
       params: {
-        id: it.id,
+        slug: it.slug,
       },
       locale: it.locale,
     };

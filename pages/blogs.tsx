@@ -13,11 +13,11 @@ interface IProps {
 const Blogs = ({ blogs }: IProps) => {
   return (
     <Layout>
-      <h1 className="tw-section-title">All Blogs</h1>
+      <h1 className="windi-section-title">All Blogs</h1>
       <div className="space-y-6">
         {blogs.map((blog) => {
-          const { id } = blog;
-          return <MdxHeader key={id} mdx={blog} link={`/blogs/${id}`} />;
+          const { slug } = blog;
+          return <MdxHeader key={slug} mdx={blog} link={`/blogs/${slug}`} />;
         })}
       </div>
     </Layout>

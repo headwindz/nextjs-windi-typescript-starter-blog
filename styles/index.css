@@ -2,6 +2,6 @@ a {
   @apply !no-underline !cursor-pointer;
 }
 
-.tw-section-title {
-  @apply mb-8 select-none text-5xl font-bold;
+.windi-section-title {
+  @apply mb-8 select-none text-7xl font-bold;
 }

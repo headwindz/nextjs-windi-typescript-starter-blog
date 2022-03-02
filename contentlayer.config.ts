@@ -22,10 +22,10 @@ const computedFields: ComputedFields = {
     type: 'string',
     resolve: (doc) => doc._raw.sourceFileDir.replace(/.*\//g, ''),
   },
-  id: {
-    type: 'string',
-    resolve: (doc) => doc._raw.sourceFileDir.replace(/.*\//g, ''),
-  },
+  // id: {
+  //   type: 'string',
+  //   resolve: (doc) => doc._raw.sourceFileDir.replace(/.*\//g, ''),
+  // },
   locale: {
     type: 'string',
     resolve: (doc) => {

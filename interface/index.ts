@@ -1,4 +1,3 @@
-
 export interface INavLink {
   title?: string;
   path: string;
@@ -6,6 +5,7 @@ export interface INavLink {
 
 export interface IMdx {
   id: string;
+  slug: string;
   title: string;
   date: string;
   content: string;
@@ -13,4 +13,7 @@ export interface IMdx {
   duration: string;
 }
 
-export type IGroupedTagsInfo<T extends keyof IMdx> = Record<string, Pick<IMdx, T>[]>
+export type IGroupedTagsInfo<T extends keyof IMdx> = Record<
+  string,
+  Pick<IMdx, T>[]
+>;

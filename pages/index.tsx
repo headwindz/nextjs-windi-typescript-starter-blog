@@ -1,10 +1,10 @@
 import Layout from '@components/layout';
 import Mdx from '@components/mdx';
-import { IMdx } from '@interface';
 import { GetStaticProps } from 'next';
 import { allIntros } from '.contentlayer/generated';
+import type { Intro } from '.contentlayer/generated';
 
-const Index = ({ intro }: { intro: IMdx }) => {
+const Index = ({ intro }: { intro: Intro }) => {
   return (
     <Layout>
       <Mdx mdx={intro} showBackOption={false} />

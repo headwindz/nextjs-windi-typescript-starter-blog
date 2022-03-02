@@ -22,10 +22,6 @@ const computedFields: ComputedFields = {
     type: 'string',
     resolve: (doc) => doc._raw.sourceFileDir.replace(/.*\//g, ''),
   },
-  // id: {
-  //   type: 'string',
-  //   resolve: (doc) => doc._raw.sourceFileDir.replace(/.*\//g, ''),
-  // },
   locale: {
     type: 'string',
     resolve: (doc) => {
@@ -42,7 +38,7 @@ const REQUIRED_FIELD: any = {
 };
 
 const COMMON_FIELDS: any = {
-  tags: { type: 'list' },
+  tags: { type: 'json' },
   date: { type: 'date' },
 };
 
@@ -51,11 +47,8 @@ const Blogs = defineDocumentType(() => ({
   filePathPattern: 'blogs/**/*.mdx',
   contentType: 'mdx',
   fields: {
-    // ...REQUIRED_FIELD,
-    // ...COMMON_FIELDS
-    title: { type: 'string', required: true },
-    date: { type: 'date' },
-    tags: { type: 'json' },
+    ...REQUIRED_FIELD,
+    ...COMMON_FIELDS,
   },
   computedFields,
 }));
@@ -65,7 +58,7 @@ const Intro = defineDocumentType(() => ({
   filePathPattern: 'intro/*.mdx',
   contentType: 'mdx',
   fields: {
-    title: { type: 'string', required: true },
+    ...REQUIRED_FIELD,
   },
   computedFields,
 }));

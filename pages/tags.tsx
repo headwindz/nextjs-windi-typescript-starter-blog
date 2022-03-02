@@ -1,19 +1,14 @@
 import Layout from '@components/layout';
-import { getGroupedTagsInfo } from '@lib/api';
 import { GetStaticProps } from 'next';
 import { Tag } from '@arco-design/web-react';
 import Link from 'next/link';
-import { IGroupedTagsInfo } from '@interface';
+import { allBlogs } from '.contentlayer/generated';
+import type { Blogs } from '.contentlayer/generated';
 
-interface IProps {
-  groupedTags: IGroupedTagsInfo<'tags'>;
-}
-
-const Tags = ({ groupedTags }: IProps) => {
+const Tags = ({ groupedTags }: any) => {
   return (
     <Layout>
-      tags
-      {/* <h1 className="tw-section-title">All Tags</h1>
+      <h1 className="tw-section-title">All Tags</h1>
       <div className="max-w-lg flex flex-wrap space-x-5">
         {Object.keys(groupedTags).map((tagString) => {
           const total = groupedTags[tagString].length;
@@ -26,18 +21,31 @@ const Tags = ({ groupedTags }: IProps) => {
             </Link>
           );
         })}
-      </div> */}
+      </div>
     </Layout>
   );
 };
 
 export default Tags;
 
-// export const getStaticProps: GetStaticProps = async (context) => {
-// const { locale } = context;
-// const groupedTags = getGroupedTagsInfo([], locale);
+export const getStaticProps: GetStaticProps = async (context) => {
+  const locale = context.locale;
 
-// return {
-//   props: { groupedTags },
-// };
-// };
+  const blogs = allBlogs.filter((it) => it.locale === locale);
+  const groupedTagsInfo = blogs.reduce(
+    (grouped: Record<string, Blogs[]>, blog: Blogs) => {
+      const tagsOfBlog = blog.tags || [];
+      tagsOfBlog.forEach((tagOfBlog: string) => {
+        if (!grouped[tagOfBlog]) {
+          grouped[tagOfBlog] = [];
+        }
+        grouped[tagOfBlog].push(blog);
+      });
+      return grouped;
+    },
+    {} as Record<string, Blogs[]>
+  );
+  return {
+    props: { groupedTags: groupedTagsInfo },
+  };
+};

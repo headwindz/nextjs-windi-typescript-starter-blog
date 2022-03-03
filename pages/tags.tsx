@@ -1,6 +1,5 @@
 import Layout from '@components/layout';
 import { GetStaticProps } from 'next';
-import { Tag } from '@arco-design/web-react';
 import Link from 'next/link';
 import { allBlogs } from '.contentlayer/generated';
 import type { Blogs } from '.contentlayer/generated';
@@ -8,20 +7,19 @@ import type { Blogs } from '.contentlayer/generated';
 const Tags = ({ groupedTags }: any) => {
   return (
     <Layout>
-      <h1 className="tw-section-title">All Tags</h1>
-      <div className="max-w-lg flex flex-wrap space-x-5">
+      <h1 className="tw-section-title">Tags</h1>
+      <ul className="max-w-lg">
         {Object.keys(groupedTags).map((tagString) => {
           const total = groupedTags[tagString].length;
           return (
-            <Link href={`/tags/${tagString}`} key={tagString} passHref>
-              <Tag
-                size="large"
-                className="cursor-pointer !text-xl"
-              >{`${tagString} (${total})`}</Tag>
-            </Link>
+            <li key={tagString}>
+              <Link href={`/tags/${tagString}`} passHref>
+                <span className="cursor-pointer !text-xl">{`${tagString} (${total})`}</span>
+              </Link>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </Layout>
   );
 };

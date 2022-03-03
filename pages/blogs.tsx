@@ -12,7 +12,7 @@ interface IProps {
 const Blogs = ({ blogs }: IProps) => {
   return (
     <Layout>
-      <h1 className="windi-section-title">All Blogs</h1>
+      <h1 className="windi-section-title">Blogs</h1>
       <div className="space-y-6">
         {blogs.map((blog) => {
           const { slug } = blog;

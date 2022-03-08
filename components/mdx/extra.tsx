@@ -1,18 +1,13 @@
 import { parseISO, format } from 'date-fns';
-import { IMdx } from '@interface';
+import type { Blog } from '.contentlayer/generated';
 
-interface IProps {
-  date: IMdx['date'];
-  duration?: IMdx['duration'];
-}
-
-const MdxExtra = ({ date, duration }: IProps) => {
-  const hasDuration = duration != null;
-  const isoDateString = parseISO(date);
+const MdxExtra = ({ date, readingTime }: Blog) => {
+  const hasDuration = readingTime != null;
+  const isoDateString = parseISO(date!);
   return (
     <div className="flex space-x-1 items-center text-sm text-gray-400 dark:text-gray-200">
       <time dateTime={date}>{format(isoDateString, 'LLL d, yyyy')}</time>
-      {hasDuration ? <div>- 🍸 {duration}</div> : null}
+      {hasDuration ? <div>- 🍸 {readingTime}</div> : null}
     </div>
   );
 };

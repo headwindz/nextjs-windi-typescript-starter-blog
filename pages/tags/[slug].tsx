@@ -2,12 +2,12 @@ import Layout from '@components/layout';
 import MdxHeader from '@components/mdx/header';
 import Head from 'next/head';
 import { GetStaticProps, GetStaticPaths } from 'next';
-import type { Blogs } from '.contentlayer/generated';
+import type { Blog } from '.contentlayer/generated';
 import { allBlogs } from '.contentlayer/generated';
 
 interface IProps {
   tagString: string;
-  blogs: Blogs[];
+  blogs: Blog[];
 }
 
 const Tag = ({ tagString, blogs }: IProps) => {

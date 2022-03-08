@@ -1,11 +1,12 @@
 import { useCallback } from 'react';
 import Head from 'next/head';
-import { IMdx } from '@interface';
 import Renderer from './renderer';
 import Header from './header';
 import { useRouter } from 'next/router';
+import type { Blog } from '.contentlayer/generated';
+
 interface IProps {
-  mdx: IMdx;
+  mdx: Blog;
   showBackOption: boolean;
 }
 

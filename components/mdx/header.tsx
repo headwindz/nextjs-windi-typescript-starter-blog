@@ -1,10 +1,10 @@
-import { IMdx } from '@interface';
 import { Tag } from '@arco-design/web-react';
 import Link from 'next/link';
 import MdxExtra from './extra';
+import type { Blog } from '.contentlayer/generated';
 
 interface IProps {
-  mdx: IMdx;
+  mdx: Blog;
   // link to redirect to when title is clicked
   link?: string;
 }
@@ -20,8 +20,8 @@ const dumpTag = (tag: string) => {
 };
 
 const Header = ({ mdx, link }: IProps) => {
-  const { title, date, tags, duration } = mdx;
-  const showDateOrDuration = date != null || duration != null;
+  const { title, date, tags, readingTime } = mdx;
+  const showDateOrDuration = date != null || readingTime != null;
   const hasTags = tags && tags.length > 0;
 
   const _title = link ? <Link href={link}>{title}</Link> : title;

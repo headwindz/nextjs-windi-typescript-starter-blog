@@ -42,8 +42,8 @@ const COMMON_FIELDS: any = {
   date: { type: 'date' },
 };
 
-const Blogs = defineDocumentType(() => ({
-  name: 'Blogs',
+const Blog = defineDocumentType(() => ({
+  name: 'Blog',
   filePathPattern: 'blogs/**/*.mdx',
   contentType: 'mdx',
   fields: {
@@ -65,7 +65,7 @@ const Intro = defineDocumentType(() => ({
 
 const contentLayerConfig = makeSource({
   contentDirPath: 'data',
-  documentTypes: [Blogs, Intro],
+  documentTypes: [Blog, Intro],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [

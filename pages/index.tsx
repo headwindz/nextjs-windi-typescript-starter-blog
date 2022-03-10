@@ -7,7 +7,7 @@ import type { Intro } from '.contentlayer/generated';
 const Index = ({ intro }: { intro: Intro }) => {
   return (
     <Layout>
-      <Mdx mdx={intro} showBackOption={false} />
+      <Mdx mdx={intro as any} showBackOption={false} />
     </Layout>
   );
 };

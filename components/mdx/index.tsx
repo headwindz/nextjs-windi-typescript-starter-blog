@@ -11,7 +11,7 @@ interface IProps {
 }
 
 const Mdx = ({ mdx, showBackOption = true }: IProps) => {
-  const { title, content } = mdx;
+  const { title, body } = mdx;
   const router = useRouter();
 
   const back = useCallback(
@@ -28,7 +28,7 @@ const Mdx = ({ mdx, showBackOption = true }: IProps) => {
         <title>{title}</title>
       </Head>
       <Header mdx={mdx} />
-      <Renderer mdxSource={content} />
+      <Renderer mdxSource={body.code} />
       {showBackOption ? (
         <a className="!no-underline italic !font-bold text-3xl" onClick={back}>
           cd ..

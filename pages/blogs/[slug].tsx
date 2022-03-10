@@ -19,7 +19,7 @@ const Blog = ({ blog }: any) => {
 export default Blog;
 
 type IParams = {
-  id: string;
+  slug: string;
 };
 
 export const getStaticProps: GetStaticProps<any, IParams> = async (context) => {

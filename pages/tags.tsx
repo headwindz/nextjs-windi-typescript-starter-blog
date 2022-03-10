@@ -2,7 +2,7 @@ import Layout from '@components/layout';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { allBlogs } from '.contentlayer/generated';
-import type { Blogs } from '.contentlayer/generated';
+import type { Blog } from '.contentlayer/generated';
 
 const Tags = ({ groupedTags }: any) => {
   return (
@@ -31,7 +31,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const blogs = allBlogs.filter((it) => it.locale === locale);
   const groupedTagsInfo = blogs.reduce(
-    (grouped: Record<string, Blogs[]>, blog: Blogs) => {
+    (grouped: Record<string, Blog[]>, blog: Blog) => {
       const tagsOfBlog = blog.tags || [];
       tagsOfBlog.forEach((tagOfBlog: string) => {
         if (!grouped[tagOfBlog]) {
@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       });
       return grouped;
     },
-    {} as Record<string, Blogs[]>
+    {} as Record<string, Blog[]>
   );
   return {
     props: { groupedTags: groupedTagsInfo },

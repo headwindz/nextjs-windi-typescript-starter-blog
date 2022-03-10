@@ -39,7 +39,7 @@ const REQUIRED_FIELD: any = {
 
 const COMMON_FIELDS: any = {
   tags: { type: 'json' },
-  date: { type: 'date' },
+  date: { type: 'string' },
 };
 
 const Blog = defineDocumentType(() => ({

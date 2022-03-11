@@ -8,13 +8,15 @@
 
 A starter blogging template powered by [nextjs], [windicss] and [typescript]
 
-[![license-img]][license-link]
+[![license-img]][license-link] [![version-img]][version-link]
 
 [nextjs]: https://nextjs.org
 [windicss]: https://windicss.org
 [typescript]: https://www.typescriptlang.org/
 [license-img]: https://img.shields.io/badge/license-MIT-blue.svg
 [license-link]: https://github.com/n0ruSh/nextjs-windi-typescript-starter-blog/blob/main/LICENSE
+[version-img]: https://img.shields.io/github/package-json/v/n0ruSh/nextjs-windi-typescript-starter-blog
+[version-link]: https://github.com/n0ruSh/nextjs-windi-typescript-starter-blog/blob/main/package.json#L3
 
 </div>
 

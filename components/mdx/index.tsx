@@ -28,7 +28,9 @@ const Mdx = ({ mdx, showBackOption = true }: IProps) => {
         <title>{title}</title>
       </Head>
       <Header mdx={mdx} />
-      <Renderer mdxSource={body.code} />
+      <div className="prose">
+        <Renderer mdxSource={body.code} />
+      </div>
       {showBackOption ? (
         <a className="!no-underline italic !font-bold text-3xl" onClick={back}>
           cd ..

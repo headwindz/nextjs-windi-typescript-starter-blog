@@ -29,3 +29,19 @@
   background-clip: text;
   background-color: rgb(65 97 228);
 }
+
+/* first letter */
+.prose > p:first-of-type {
+  padding-top: 70px;
+}
+
+.prose > p:first-of-type::first-letter {
+  float: left;
+  padding: 0 20px;
+  margin-top: -10px;
+  margin-right: 12px;
+  font-size: 2rem;
+  color: #4399be;
+  border: 2px solid #6378ca;
+  border-image: linear-gradient(135deg, #6378ca, #6ddb90) 1;
+}

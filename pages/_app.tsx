@@ -4,6 +4,7 @@ import '@arco-design/web-react/dist/css/arco.css';
 import 'windi.css';
 import '../styles/index.css';
 import '../styles/prism.css';
+import '../styles/prose.css';
 import { BackTop, Button } from '@arco-design/web-react';
 import { IconUp } from '@arco-design/web-react/icon';
 

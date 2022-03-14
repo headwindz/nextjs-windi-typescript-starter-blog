@@ -1,0 +1,31 @@
+/* blockquote */
+.prose blockquote {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.prose blockquote p {
+  background: linear-gradient(90deg, #4969ed, #3bd86d);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  font-size: 1.5em;
+  margin: 1rem 0;
+  padding: 1rem 0;
+}
+
+.prose blockquote p::before {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1;
+  pointer-events: none;
+  content: '“' !important;
+  -webkit-text-fill-color: transparent;
+  clip-path: polygon(0px 0px, 100% 0px, 100% 98%, 0px 98%);
+  background-clip: text;
+  background-color: rgb(65 97 228);
+}

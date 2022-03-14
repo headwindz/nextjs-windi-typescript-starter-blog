@@ -24,6 +24,8 @@ A starter blogging template powered by [nextjs], [windicss] and [typescript]
 
 - [Demo](https://nextjs-windi-typescript-starter-blog-n0rush.vercel.app/) - this repo
 
+Are you using the template🚗 ? Please add yourself to the list above via a PR
+
 ## 🎉 Features
 
 - Written in Typescript, with native type support.
@@ -50,7 +52,7 @@ A starter blogging template powered by [nextjs], [windicss] and [typescript]
 $ yarn
 ```
 
-## Development
+## 🚗 Development
 
 First, run the development server:
 
@@ -60,7 +62,7 @@ yarn run dev
 
 Open your browser and visit [http://localhost:3000](http://localhost:3000).
 
-## Overview
+## 📕 Overview
 
 - `theme.config.js` - Theme configuration
 - `next.config.js` - Nextjs configuration

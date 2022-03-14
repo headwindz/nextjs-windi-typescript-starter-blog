@@ -14,4 +14,5 @@ export default defineConfig({
       dark: true,
     }),
   ],
+  safelist: ['relative'],
 });

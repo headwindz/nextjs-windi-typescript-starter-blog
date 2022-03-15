@@ -27,14 +27,4 @@ module.exports = {
     title: 'Nextjs tailwind starter blog',
     logo: '/assets/logo.jpeg',
   },
-  navLinks: [
-    {
-      title: 'Blog',
-      path: '/blogs',
-    },
-    {
-      title: 'Tag',
-      path: '/tags',
-    },
-  ],
 };

@@ -18,8 +18,7 @@
     "paths": {
       "@components/*": ["components/*"],
       "@constants": ["constants"],
-      "@interface": ["interface"],
-      "@lib/*": ["lib/*"]
+      "@interface": ["interface"]
     }
   },
   "exclude": ["node_modules"],

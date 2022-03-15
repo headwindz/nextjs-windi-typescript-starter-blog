@@ -21,7 +21,7 @@ const ModeSwitch = () => {
     <Button
       type="text"
       aria-label="Toggle Dark Mode"
-      className="rounded !text-arco-text-1 text-base"
+      className="rounded text-base"
       onClick={onToggle}
     >
       {theme == 'light' ? <IconSun /> : <IconMoon />}

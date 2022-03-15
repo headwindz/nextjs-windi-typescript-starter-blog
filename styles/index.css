@@ -1,0 +1,6 @@
+@import url('prism.css');
+@import url('prose.css');
+
+.windi-section-title {
+  @apply mb-8 select-none text-7xl font-bold text-black dark:(text-white);
+}

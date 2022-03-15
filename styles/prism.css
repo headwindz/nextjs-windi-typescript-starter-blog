@@ -157,3 +157,39 @@ pre[class*='language-'] {
 .token.italic {
   font-style: italic;
 }
+
+/**
+ * Origin from https://github.com/timlrx/tailwind-nextjs-starter-blog/blob/master/css/prism.css#L9 with minor tweak
+ */
+.rehype-code-title {
+  @apply rounded-t bg-gray-600 px-3 py-2 text-sm font-bold text-gray-200;
+}
+
+.rehype-code-title + div > pre {
+  @apply mt-0 rounded-t-none;
+}
+
+.code-highlight {
+  @apply float-left w-full;
+}
+
+.code-line {
+  @apply -mx-4 block border-l-4 px-4 border-transparent;
+}
+
+.code-line.inserted {
+  @apply bg-green-600 bg-opacity-40;
+}
+
+.code-line.deleted {
+  @apply bg-red-600 bg-opacity-40;
+}
+
+.highlight-line {
+  @apply -mx-4 border-l-4 bg-gray-700 bg-opacity-60 border-gray-500;
+}
+
+.line-number::before {
+  @apply mr-4 -ml-2 inline-block w-4 text-right text-gray-400;
+  content: attr(line);
+}

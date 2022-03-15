@@ -10,6 +10,21 @@ import { IconSearch, IconMenu } from '@arco-design/web-react/icon';
 
 const { Item: MenuItem } = Menu;
 
+/**
+ * navigation links on the header
+ * should match to pages under pages folder
+ */
+const NAV_LINKS = [
+  {
+    title: 'Blog',
+    path: '/blogs',
+  },
+  {
+    title: 'Tag',
+    path: '/tags',
+  },
+];
+
 const dumpLink = ({ title, path }: INavLink) => {
   return (
     <Link href={path} passHref key={path}>
@@ -31,12 +46,11 @@ const dumpMenu = ({ title, path }: INavLink) => {
 };
 
 const Header = () => {
-  const [logo, NAV_LINKS] = useMemo(() => {
+  const logo = useMemo(() => {
     const {
-      navLinks,
       site: { logo },
     } = themeConfig;
-    return [logo, navLinks];
+    return logo;
   }, []);
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);

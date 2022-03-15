@@ -1,4 +1,8 @@
 module.exports = {
+  /**
+   * i18n settings
+   * comment out this section if you don't need i18n
+   */
   i18n: {
     locales: [
       {
@@ -12,6 +16,9 @@ module.exports = {
     ],
     defaultLocale: 'en-US',
   },
+  /**
+   * site meta
+   */
   site: {
     author: {
       name: 'n0ruSh',

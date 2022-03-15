@@ -1,7 +1,0 @@
-a {
-  @apply !no-underline !cursor-pointer;
-}
-
-.windi-section-title {
-  @apply mb-8 select-none text-7xl font-bold;
-}

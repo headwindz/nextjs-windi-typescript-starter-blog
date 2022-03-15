@@ -55,9 +55,10 @@ It takes three possible values: Strict, Lax, and None. With `Strict`, the cookie
 
 ### Fetch
 
-```js
+```diff showLineNumbers
 fetch('https://example.com', {
-  credentials: 'include' | 'same-origin' | 'omit',
++  credentials: 'include' | 'same-origin' | 'omit',
+-  credentials: 'include'
 });
 ```
 

@@ -67,12 +67,17 @@ const contentLayerConfig = makeSource({
   contentDirPath: 'data',
   documentTypes: [Blog, Intro],
   mdx: {
+    // support GFM (autolink literals, footnotes, strikethrough, tables, tasklists).
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
+      // add ids to headings.
       rehypeSlug,
+      // parsing code blocks and adding titles to code blocks
       rehypeCodeTitles,
+      // highlight code blocks in HTML with Prism with additional line highlighting and line numbers functionalities
       rehypePrism,
       [
+        // add links to headings with ids back to themselves.
         rehypeAutolinkHeadings,
         {
           properties: {

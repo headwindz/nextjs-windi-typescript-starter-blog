@@ -12,6 +12,7 @@ import rehypeSlug from 'rehype-slug';
 import rehypeCodeTitles from 'rehype-code-titles';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrism from 'rehype-prism-plus';
+import toc from '@jsdevtools/rehype-toc';
 
 const computedFields: ComputedFields = {
   readingTime: {
@@ -85,6 +86,7 @@ const contentLayerConfig = makeSource({
           },
         },
       ],
+      [toc, { headings: ['h1', 'h2'] }],
     ],
   },
 });

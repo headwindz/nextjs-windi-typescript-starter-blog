@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@arco-design/web-react": "^2.28.2",
+    "@jsdevtools/rehype-toc": "^3.0.2",
     "classnames": "2.3.1",
     "contentlayer": "^0.1.1",
     "date-fns": "2.21.3",

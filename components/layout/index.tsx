@@ -8,7 +8,7 @@ const Layout: FC = ({ children }) => {
     <main className="flex flex-col min-h-screen px-8">
       <Meta />
       <Header />
-      <main className="flex-grow mx-auto my-4 max-w-2xl">{children}</main>
+      <main className="flex-grow mx-auto my-4 pt-16 max-w-2xl">{children}</main>
       <Footer />
     </main>
   );

@@ -59,7 +59,7 @@ const Header = () => {
   const menus = NAV_LINKS.map(dumpMenu);
 
   return (
-    <header className="py-4 flex">
+    <header className="flex fixed left-0 top-0 z-50 w-full py-4 px-8 bg-white dark:bg-black bg-opacity-30 dark:bg-opacity-30 backdrop-blur-sm backdrop-filter">
       <Link href="/" passHref>
         <Image
           src={logo}

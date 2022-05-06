@@ -24,7 +24,7 @@ module.exports = {
       name: 'n0ruSh',
       link: 'https://github.com/n0rush',
     },
-    title: 'Nextjs tailwind starter blog',
+    title: 'Nextjs windi starter blog',
     logo: '/assets/logo.jpeg',
   },
 };

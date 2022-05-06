@@ -8,7 +8,7 @@ import LocaleSwitch from '../localeSwitch';
 import Image from 'next/image';
 import { IconSearch, IconMenu } from '@arco-design/web-react/icon';
 
-const { Item: MenuItem } = Menu;
+// const { Item: MenuItem } = Menu;
 
 /**
  * navigation links on the header
@@ -36,13 +36,12 @@ const dumpLink = ({ title, path }: INavLink) => {
 };
 
 const dumpMenu = ({ title, path }: INavLink) => {
-  return (
-    <MenuItem key={path}>
-      <Link href={path} passHref key={path}>
-        {title}
-      </Link>
-    </MenuItem>
-  );
+  return null;
+  // <MenuItem key={path}>
+  //   <Link href={path} passHref key={path}>
+  //     {title}
+  //   </Link>
+  // </MenuItem>
 };
 
 const Header = () => {
@@ -99,9 +98,9 @@ const Header = () => {
       >
         <Menu>
           {menus}
-          <MenuItem key="localSwitch">
+          {/* <MenuItem key="localSwitch">
             <LocaleSwitch />
-          </MenuItem>
+          </MenuItem> */}
         </Menu>
       </Drawer>
     </header>

@@ -9,6 +9,7 @@ const ModeSwitch = () => {
   const { theme, setTheme } = useTheme();
 
   useEffect(() => setMounted(true), []);
+  console.assert('hello');
 
   const onToggle = useCallback(() => {
     const currentTheme = theme === 'dark' ? 'light' : 'dark';
